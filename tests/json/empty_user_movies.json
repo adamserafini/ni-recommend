@@ -1,0 +1,12 @@
+{
+    "movies": {
+        "1": "Psycho (1960)"
+    },
+    "users": [
+        {
+            "movies": [
+            ],
+            "user_id": 1
+        }
+    ]
+}

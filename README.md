@@ -23,3 +23,16 @@ For usage instructions, see:
 Example usage:
 
     recommend --limit=10 23 12 10 movies.json
+
+## How it Works
+
+The task is an example of 'Item-based Collaborative Filtering on Unary Data'. In
+this.
+
+- Item Similarity - Cosine Similarity
+- Normalise (on Unary? check.)
+- Compute cosine between two vectors
+
+- Scoring Items
+
+## Future Works

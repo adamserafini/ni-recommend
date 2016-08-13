@@ -52,6 +52,11 @@ def test_bad_user_movie_id():
     assert result.exit_code > 0
     assert "not of type 'integer'" in result.output
 
+def test_empty_user_movies():
+    result = runner.invoke(cli, ['json/empty_user_movies.json'])
+    assert result.exit_code > 0
+    assert "Invalid value" in result.output
+
 def test_good_input():
     result = runner.invoke(cli, ['json/good_input.json'])
     assert result.exit_code == 0
