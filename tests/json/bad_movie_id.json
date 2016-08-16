@@ -1,11 +1,12 @@
 {
     "movies": {
+        "1": "A Movie Title (1922)",
         "xOH ": "Psycho (1960)"
     },
     "users": [
         {
             "movies": [
-                5
+                1
             ],
             "user_id": 1
         }

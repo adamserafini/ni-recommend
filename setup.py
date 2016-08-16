@@ -5,7 +5,6 @@ setup(
     version='0.1',
     py_modules=['recommend'],
     install_requires=[
-        'pytest==2.9.2',
         'Click==6.6',
         'jsonschema==2.5.1'
     ],
