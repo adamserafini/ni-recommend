@@ -43,8 +43,8 @@ Example usage:
 
 The task is an example 'Item-based Collaborative Filtering on Unary Data'.
 Each movie is represented as a binary vector of N dimensions where N is the
-number of users. Each element(i) of the movie vector is either 0 or 1 depending
-on whether the user(i) has expressed a preference for the movie.
+number of users. Each element(n) of the movie vector is either 0 or 1 depending
+on whether the user(n) has expressed a preference for the movie.
 
 The similarity of any two movies is the "cosine similarity" of their respective
 vectors.
