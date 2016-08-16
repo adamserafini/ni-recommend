@@ -27,7 +27,8 @@ class ItemRecommender(object):
 
         Calculate a score for every item not in query_ids and return the IDs
         with the highest scores. The score of an item is the sum of its
-        similarity with each ID in query_ids.
+        similarity with each ID in query_ids. Items with the same score
+        are tie-broken by their absolute popularities.
 
         Args:
             query_ids: A set of item IDs to make recommendations for.
@@ -47,8 +48,7 @@ class ItemRecommender(object):
         # Calcuate and store the item scores and popularity:
         for item in [i for i in self.items if i not in query_ids]:
             score = sum([self.similarity(i, item) for i in query_ids])
-            popularity = self.popularity(item)
-            scores.append((score, popularity, item))
+            scores.append((score, self.popularity(item), item))
 
         # Return the n most similar IDs:
         return [x[-1] for x in sorted(scores, reverse=True)[:limit]]
