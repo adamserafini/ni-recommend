@@ -77,6 +77,6 @@ Here are a few things I would look at if this were real and going into productio
   it's fine, on a larger data set, it would not be.
 * The algorithm matches intuitive expectations for toy examples and makes
   good actual predictions on the given data set (for example, recommending
-  the movie Apocalypse Now to fans of A Clockwork Orange. However, a data 
+  the movie Apocalypse Now to fans of A Clockwork Orange). However, a data 
   scientist would probably want to ensure and test that the recommendations 
   are predictive of user preferences on a more rigourous statistical basis.
