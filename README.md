@@ -24,10 +24,12 @@ Or if you want to use Python3:
 
     virtualenv venv -p python3
 
-Then activate the the virtualenv and install the requirements:
+Then activate the the virtualenv and install the requirements. Using pip's
+`editable` flag means we do not have to add the project directory to PYTHONPATH
+in order to run the CLI.
 
     . venv/bin/activate
-    pip install .
+    pip install --editable .
 
 ## Usage
 
@@ -63,12 +65,10 @@ movies are recommended.
 
 ## Todo
 
-Here are a few things I would look at if this were real and going into production:
-
 * Better error reporting. For example, at the moment we just tell the user the
   PREFERENCE_DATA is in the wrong schema and don't tell the user how it might
   be fixed.
-* Better handling of degenerate cases - in particular the case where no data 
+* Better handling of degenerate cases - in particular the case where no data
   is available. In that case we should recommend some sensible defaults or
   tell the user there isn't enough data to make recommendations.
 * The ItemRecommender is written for simplicity and understanding of the reader,
@@ -77,6 +77,6 @@ Here are a few things I would look at if this were real and going into productio
   it's fine, on a larger data set, it would not be.
 * The algorithm matches intuitive expectations for toy examples and makes
   good actual predictions on the given data set (for example, recommending
-  the movie Apocalypse Now to fans of A Clockwork Orange). However, a data 
-  scientist would probably want to ensure and test that the recommendations 
-  are predictive of user preferences on a more rigourous statistical basis.
+  the movie Apocalypse Now to fans of A Clockwork Orange). However, a data
+  scientist would probably want to ensure and test that the recommendations
+  are predictive of user preferences on a more rigorous statistical basis.
