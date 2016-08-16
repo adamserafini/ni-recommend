@@ -46,7 +46,7 @@ Each movie is represented as a binary vector of N dimensions where N is the
 number of users. Each element(i) of the movie vector is either 0 or 1 depending
 on whether the user(i) has expressed a preference for the movie.
 
-The similarity of the two movies is the "cosine similarity" of their respective
+The similarity of any two movies is the "cosine similarity" of their respective
 vectors.
 
 The movie IDs passed into the CLI represent the preferences of a hypothetical
@@ -61,17 +61,22 @@ identical scores are tie-broken by their absolute popularity. This handles the
 case where the querying user has no preferences; in this case the most popular
 movies are recommended.
 
-## TODO
+## Todo
 
-Here's a few things I would look at if this were real / going into production:
+Here are a few things I would look at if this were real and going into production:
 
 * Better error reporting. For example, at the moment we just tell the user the
   PREFERENCE_DATA is in the wrong schema and don't tell the user how it might
   be fixed.
-* Better handling of degenerate cases - ie. no data available? In that case we
-  should recommend some sensible defaults. This would also permit us to be less
-  strict about the input.
-* The ItemRecommender is written for simplicity of understanding for the reader,
+* Better handling of degenerate cases - in particular the case where no data 
+  is available. In that case we should recommend some sensible defaults or
+  tell the user there isn't enough data to make recommendations.
+* The ItemRecommender is written for simplicity and understanding of the reader,
   not for performance. For example: looping through the user preferences twice
   (once for item popularity, once for similarity). On a dataset of this size,
   it's fine, on a larger data set, it would not be.
+* The algorithm matches intuitive expectations for toy examples and makes
+  good actual predictions on the given data set (for example, recommending
+  the movie Apocalypse Now to fans of A Clockwork Orange. However, a data 
+  scientist would probably want to ensure and test that the recommendations 
+  are predictive of user preferences on a more rigourous statistical basis.
