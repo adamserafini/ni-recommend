@@ -41,7 +41,7 @@ Example usage:
 
 ## How it Works
 
-The task is an example 'Item-based Collaborative Filtering on Unary Data'.
+The task is an example of 'Item-based Collaborative Filtering on Unary Ratings'.
 Each movie is represented as a binary vector of N dimensions where N is the
 number of users. Each element(n) of the movie vector is either 0 or 1 depending
 on whether the user(n) has expressed a preference for the movie.
