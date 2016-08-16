@@ -55,7 +55,8 @@ def cli(limit, movie_ids, preference_data):
     """
     Movie recommender script. The script accepts an unlimited number of movie
     ID numbers and a JSON file of user movie preferences. It returns a JSON
-    formatted response to STDOUT with its recommendations.
+    formatted array to STDOUT with its recommendations in descending order
+    of confidence.
     """
 
     # Test the JSON input is valid before proceeding.
