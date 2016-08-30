@@ -5,11 +5,11 @@ import jsonschema
 
 from src import ItemRecommender
 
-'''
+"""
 Define a jsonschema representation of the PREFERENCE_DATA to validate against.
 It doesn't validate the whole structure: just the data we need in the
 required format to make recommendations.
-'''
+"""
 PREFERENCE_DATA_SCHEMA = {
   "properties": {
     "movies": {
@@ -46,6 +46,7 @@ PREFERENCE_DATA_SCHEMA = {
   ]
 }
 
+
 @click.command()
 @click.option('--limit', default=3, type=click.IntRange(min=1),
               help='Limit of recommendations to return (default=3).')
@@ -74,7 +75,7 @@ def cli(limit, movie_ids, preference_data):
     if error:
         raise click.BadParameter(error, param_hint='PREFERENCE_DATA')
 
-    # Tranform the user input into the format required by ItemRecommender.
+    # Transform the user input into the format required by ItemRecommender.
     items = {int(key) for key in data['movies']}
     user_prefs = [set(user['movies']) for user in data['users']]
     query = set(movie_ids)

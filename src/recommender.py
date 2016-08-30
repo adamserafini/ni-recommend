@@ -1,5 +1,6 @@
 import math
 
+
 class ItemRecommender(object):
     """Item Recommendation engine.
 
